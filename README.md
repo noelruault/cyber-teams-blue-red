@@ -5,20 +5,23 @@ A web-based CTF (Capture The Flag) challenge focusing on common web vulnerabilit
 ## Quick Start with Docker
 
 ```bash
-# Pull and run the application
-docker compose up --build
+# Pull the code and run the application
+git clone https://github.com/noelruault/cyber-teams-blue-red.git \
+    && cd cyber-teams-blue-red \
+    && docker compose up --build --force-recreate
+```
 
-# Access the application
+### Access the application
+
 Frontend: http://localhost:8000
 Backend API: http://localhost:3000
 File Server: http://localhost:4000
-```
 
 ## Features
 
-## Local Deployment
+## Local Development
 
-make serve
+Use the command `make serve` to start any service.
 
 ## References
 
