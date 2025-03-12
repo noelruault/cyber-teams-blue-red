@@ -1,0 +1,40 @@
+### macOS ###
+## General ##
+.DS_Store
+.AppleDouble
+.LSOverride
+
+## Config ##
+.env
+.env.*
+
+## Thumbnails ##
+_*
+__*
+._*
+/**/_*
+/**/__*
+/**/._*
+
+## Node.js ##
+node_modules/
+**/node_modules/
+
+## VSCode ##
+!.vscode/*
+
+## Wrangler files ##
+.wrangler
+.dev.vars
+
+## Others ##
+bun.lockb
+/**/*.db
+
+## Build files ##
+dist
+**/dist
+
+## Vite /root/ deploy files ##
+!/public/*
+.secrets/

@@ -1,0 +1,21 @@
+<div class="max-w-md mx-auto space-y-6">
+    <!-- Account Creation Card -->
+    <div class="bg-white rounded-xl shadow-md p-6">
+        <h2 class="text-2xl font-bold text-gray-800 mb-4">Create Bank Account</h2>
+
+        <form id="createForm" class="space-y-4">
+            <div>
+                <input type="text" id="newUsername" placeholder="Choose username" required
+                    class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500">
+            </div>
+
+            <input type="hidden" id="newBalance" value="0">
+            <button type="submit"
+                class="w-full bg-green-500 text-white px-4 py-2 rounded-md hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2">
+                Create Account
+            </button>
+        </form>
+        <div id="createMessage" class="mt-4"></div>
+    </div>
+
+</div>

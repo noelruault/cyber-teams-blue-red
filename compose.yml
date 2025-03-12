@@ -1,0 +1,58 @@
+services:
+  frontend:
+    build:
+      context: .
+      dockerfile: ./ops/Dockerfile
+    container_name: blue-red-frontend
+    command: ["bun", "vite", "--port", "8000", "--host", "0.0.0.0", "--strictPort"]
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/app
+      - /app/node_modules
+    environment:
+      - NODE_ENV=development
+    depends_on:
+      - backend
+      - fileserver
+    networks:
+      - blue-red-app-network
+
+  backend:
+    build:
+      context: .
+      dockerfile: ./ops/Dockerfile.backend
+    container_name: blue-red-backend
+    command: ["bun", "--hot", "run", "src/backend/index.js"]
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/app
+      - /app/node_modules
+    environment:
+      - NODE_ENV=development
+    networks:
+      - blue-red-app-network
+
+  fileserver:
+    build:
+      context: .
+      dockerfile: ./ops/Dockerfile
+    container_name: blue-red-fileserver
+    command: ["bun", "--hot", "run", "src/file-server/index.js"]
+    ports:
+      - "4000:4000"
+    volumes:
+      - .:/app
+      - /app/node_modules
+    environment:
+      - NODE_ENV=development
+    networks:
+      - blue-red-app-network
+
+networks:
+  blue-red-app-network:
+    driver: bridge
+
+volumes:
+  sqlite_data:

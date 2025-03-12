@@ -1,0 +1,102 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "dev start frontend server",
+            "type": "shell",
+            "command": "bun",
+            "args": [
+                "vite",
+                "--port",
+                "8000",
+                "--strictPort"
+            ],
+            "detail": "Starts the frontend Vite development server",
+            "isBackground": true,
+            "problemMatcher": {
+                "owner": "bun",
+                "pattern": {
+                    "regexp": "^(.*):(\\d+):(\\d+):\\s+(.*)$",
+                    "file": 1,
+                    "line": 2,
+                    "column": 3,
+                    "message": 4
+                },
+                "background": {
+                    "activeOnStart": true,
+                    "beginsPattern": "^VITE.*started",
+                    "endsPattern": "^ready in"
+                }
+            },
+            "group": "test",
+            "icon": {
+                "color": "terminal.ansiBlue",
+                "id": "browser"
+            }
+        },
+        {
+            "label": "dev start backend server",
+            "type": "shell",
+            "command": "bun",
+            "args": [
+                "--hot",
+                "run",
+                "src/backend/index.js"
+            ],
+            "detail": "Starts the backend development server",
+            "isBackground": true,
+            "problemMatcher": {
+                "owner": "bun",
+                "pattern": {
+                    "regexp": "^(.*):(\\d+):(\\d+):\\s+(.*)$",
+                    "file": 1,
+                    "line": 2,
+                    "column": 3,
+                    "message": 4
+                },
+                "background": {
+                    "activeOnStart": true,
+                    "beginsPattern": "Bun is starting",
+                    "endsPattern": "server started"
+                }
+            },
+            "group": "test",
+            "icon": {
+                "color": "terminal.ansiGreen",
+                "id": "server"
+            }
+        },
+        {
+            "label": "dev start fileserver server",
+            "type": "shell",
+            "command": "bun",
+            "args": [
+                "--hot",
+                "run",
+                "src/file-server/index.js"
+            ],
+            "detail": "Starts the file server",
+            "isBackground": true,
+            "problemMatcher": {
+                "owner": "bun",
+                "pattern": {
+                    "regexp": "^(.*):(\\d+):(\\d+):\\s+(.*)$",
+                    "file": 1,
+                    "line": 2,
+                    "column": 3,
+                    "message": 4
+                },
+                "background": {
+                    "activeOnStart": true,
+                    "beginsPattern": "Bun is starting",
+                    "endsPattern": "server started"
+                }
+            },
+            "group": "test",
+            "icon": {
+                "color": "terminal.ansiYellow",
+                "id": "file-directory"
+            }
+        }
+    ]
+}

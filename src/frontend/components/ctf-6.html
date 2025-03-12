@@ -1,0 +1,40 @@
+<div class="max-w-4xl mx-auto bg-white rounded-xl shadow-md overflow-hidden p-6">
+    <h2 class="text-2xl font-bold text-gray-800 mb-4">File Server</h2>
+
+    <!-- File Browser Form -->
+    <form id="fileForm" class="space-y-4 mb-6">
+        <div class="flex gap-4">
+            <input type="text" id="filePath" placeholder="Enter file path (e.g., notes/welcome.txt)" required
+                class="flex-1 px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500">
+            <button type="submit"
+                class="bg-blue-500 text-white px-6 py-2 rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
+                View File
+            </button>
+        </div>
+    </form>
+
+    <!-- File Content Display -->
+    <div id="fileContent" class="hidden">
+        <h3 class="text-lg font-semibold text-gray-700 mb-2">File Contents:</h3>
+        <pre id="contentArea"
+            class="bg-gray-50 p-4 rounded-md text-sm text-gray-600 overflow-x-auto whitespace-pre-wrap"></pre>
+    </div>
+
+    <!-- Quick Access -->
+    <div class="mt-6">
+        <h3 class="text-lg font-semibold text-gray-700 mb-2">Quick Access</h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <button onclick="document.getElementById('filePath').value='notes/welcome.txt'"
+                class="text-left px-4 py-2 bg-gray-50 hover:bg-gray-100 rounded-md text-sm text-gray-600">
+                📄 Welcome Note
+            </button>
+            <button onclick="document.getElementById('filePath').value='notes/rules.txt'"
+                class="text-left px-4 py-2 bg-gray-50 hover:bg-gray-100 rounded-md text-sm text-gray-600">
+                📜 Game Rules
+            </button>
+        </div>
+    </div>
+
+    <!-- Error Messages -->
+    <div id="errorBox" class="mt-4"></div>
+</div>

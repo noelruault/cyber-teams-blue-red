@@ -1,0 +1,59 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Development: Frontend",
+            "type": "node",
+            "request": "attach",
+            "preLaunchTask": "dev start frontend server",
+            "resolveSourceMapLocations": [ "**", "!**/node_modules/**" ]
+        },
+        {
+            "name": "Development: Backend",
+            "type": "node",
+            "request": "attach",
+            "preLaunchTask": "dev start backend server",
+            "resolveSourceMapLocations": [ "**", "!**/node_modules/**" ]
+        },
+        {
+            "name": "Development: File-Server",
+            "type": "node",
+            "request": "attach",
+            "preLaunchTask": "dev start fileserver server",
+            "resolveSourceMapLocations": [ "**", "!**/node_modules/**" ]
+        },
+        {
+            "type": "bun",
+            "name": "Debug Frontend",
+            "request": "launch",
+            "program": "${workspaceFolder}/node_modules/vite/bin/vite.js",
+            "args": [ "--port", "8000", "--strictPort" ],
+            "cwd": "${workspaceFolder}",
+            "env": {
+                "NODE_ENV": "development"
+            }
+        },
+        {
+            "type": "bun",
+            "name": "Debug Backend",
+            "request": "launch",
+            "program": "${workspaceFolder}/src/backend/index.js",
+            "args": [ "--hot", "--port=3000" ],
+            "cwd": "${workspaceFolder}",
+            "env": {
+                "NODE_ENV": "development"
+            }
+        },
+        {
+            "type": "bun",
+            "name": "Debug File Server",
+            "request": "launch",
+            "program": "${workspaceFolder}/src/file-server/index.js",
+            "args": [ "--hot" ],
+            "cwd": "${workspaceFolder}",
+            "env": {
+                "NODE_ENV": "development"
+            }
+        }
+    ]
+}
