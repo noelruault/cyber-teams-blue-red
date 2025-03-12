@@ -13,9 +13,9 @@ git clone https://github.com/noelruault/cyber-teams-blue-red.git \
 
 ### Access the application
 
-Frontend: http://localhost:8000
-Backend API: http://localhost:3000
-File Server: http://localhost:4000
+- Frontend: http://localhost:8000
+- Backend API: http://localhost:3000
+- File Server: http://localhost:4000
 
 ## Features
 
