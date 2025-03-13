@@ -1,10 +1,9 @@
-FROM oven/bun:latest
+FROM docker.io/oven/bun:latest
 
 WORKDIR /app
 
 # Copy package files
 COPY package*.json ./
-COPY bun.lockb ./
 
 # Install dependencies
 RUN bun install
